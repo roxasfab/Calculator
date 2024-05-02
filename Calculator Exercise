@@ -1,0 +1,227 @@
+namespace Calculator_App
+{
+    public partial class Calculator : Form
+    {
+        private decimal valueFirst = 0.0m;
+        private decimal valueSecond = 0.0m;
+        private decimal Result = 0.0m;
+        private string operators = "+";
+        public Calculator()
+        {
+            InitializeComponent();
+        }
+
+        private void Zero_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "0";
+            }
+            else
+            {
+                InptOtpt.Text += "0";
+            }
+        }
+
+        private void Decimal_Click(object sender, EventArgs e)
+        {
+            if (!InptOtpt.Text.Contains("."))
+            {
+                InptOtpt.Text += ".";
+            }
+        }
+
+        private void One_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "1";
+            }
+            else
+            {
+                InptOtpt.Text += "1";
+            }
+        }
+
+        private void Two_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "2";
+            }
+            else
+            {
+                InptOtpt.Text += "2";
+            }
+        }
+
+        private void Three_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "3";
+            }
+            else
+            {
+                InptOtpt.Text += "3";
+            }
+        }
+
+        private void Four_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "4";
+            }
+            else
+            {
+                InptOtpt.Text += "4";
+            }
+        }
+
+        private void Five_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "5";
+            }
+            else
+            {
+                InptOtpt.Text += "5";
+            }
+        }
+
+        private void Six_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "6";
+            }
+            else
+            {
+                InptOtpt.Text += "6";
+            }
+        }
+
+        private void Seven_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "7";
+            }
+            else
+            {
+                InptOtpt.Text += "7";
+            }
+        }
+
+        private void Eight_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "8";
+            }
+            else
+            {
+                InptOtpt.Text += "8";
+            }
+        }
+
+        private void Nine_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text == "0")
+            {
+                InptOtpt.Text = "9";
+            }
+            else
+            {
+                InptOtpt.Text += "9";
+            }
+        }
+
+        private void MinusPlus_Click(object sender, EventArgs e)
+        {
+            if (InptOtpt.Text.Contains("-"))
+            {
+                InptOtpt.Text = InptOtpt.Text.Trim('-');
+            }
+            else
+                InptOtpt.Text = "-" + InptOtpt.Text;
+        }
+
+        private void Subtraction_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(InptOtpt.Text);
+            InptOtpt.Clear();
+            operators = "-";
+        }
+
+        private void Addition_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(InptOtpt.Text);
+            InptOtpt.Clear();
+            operators = "+";
+        }
+
+        private void Multiplication_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(InptOtpt.Text);
+            InptOtpt.Clear();
+            operators = "*";
+        }
+
+        private void Division_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(InptOtpt.Text);
+            InptOtpt.Clear();
+            operators = "/";
+        }
+
+        private void Modulus_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(InptOtpt.Text);
+            InptOtpt.Clear();
+            operators = "%";
+        }
+
+        private void Equal_Click(object sender, EventArgs e)
+        {
+            switch (operators)
+            {
+                case "-":
+                    valueSecond = decimal.Parse(InptOtpt.Text);
+                    Result = valueFirst - valueSecond;
+                    InptOtpt.Text = Result.ToString();
+                    break;
+                case "+":
+                    valueSecond = decimal.Parse(InptOtpt.Text);
+                    Result = valueFirst + valueSecond;
+                    InptOtpt.Text = Result.ToString();
+                    break;
+                case "*":
+                    valueSecond = decimal.Parse(InptOtpt.Text);
+                    Result = valueFirst * valueSecond;
+                    InptOtpt.Text = Result.ToString();
+                    break;
+                case "/":
+                    valueSecond = decimal.Parse(InptOtpt.Text);
+                    Result = valueFirst / valueSecond;
+                    InptOtpt.Text = Result.ToString();
+                    break;
+                case "%":
+                    valueSecond = decimal.Parse(InptOtpt.Text);
+                    Result = valueFirst % valueSecond;
+                    InptOtpt.Text = Result.ToString();
+                    break;
+
+            }
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            valueFirst = 0.0m;
+            valueSecond = 0.0m;
+            InptOtpt.Text = "0";
+        }
+    }
+}
