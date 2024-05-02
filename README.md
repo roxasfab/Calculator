@@ -1,2 +1,2 @@
-# Calculator
-Fundamentals of Computing A1 purposes.
+# Calculator App
+Fundamentals of Computing Summative Assessment
